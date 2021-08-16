@@ -1,3 +1,4 @@
+
 # Webapp Rest API application
 
 This is simple webapp using Python Flask module
@@ -10,38 +11,41 @@ Dependencies:
 
 ## Build
 
+Generates a Wheel distribution file <b>\<package-name\></b> by running
+
     python3 setup.py bdist_wheel
 
-generates a Wheel distribution <package-name>
     
 ## Install
 
+Installs the "webapp" package into the local or virtual environment
+
     python3 install <package-name>
     
-<package-name> - generated Wheel distribution file
 
 ## Run the app
 
-    Development - To run from source code root directory
+   Development - Run from source code root directory
 
     export FLASK_APP=webapp:myapp
     flask run
 
-    Production - To run using .whl distribution package via Waitress module
+   Production - Run using .whl distribution package via Waitress module
     
     waitress-server --call --port=500 "webapp:myapp"
 
 ## Run the tests
 
-    Run the command from source code root directory
+   Run the command from source code root directory
     
     pytest test_webapp.py
 
 ## CI/CD Workflow
 
-* Source Code Checkin to Github
-* Github executes Github Actions
+* Source code is pushed to Github
+* Github executes Github Actions with the following steps
   * checkout code
+  * lint code using Pylint
   * run test using Pytest
   * build Wheel distro package
   * deploys file to the target server       
