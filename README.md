@@ -32,7 +32,7 @@ Installs the "webapp" package into the local or virtual environment
 
    Production - Run using .whl distribution package via Waitress module
     
-    waitress-server --call --port=500 "webapp:myapp"
+    waitress-serve --call --port=5000 "webapp:myapp"
 
 ## Run the tests
 
