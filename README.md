@@ -12,11 +12,13 @@ Dependencies:
 
     python3 setup.py bdist_wheel
 
+generates a Wheel distribution <package-name>
+    
 ## Install
 
     python3 install <package-name>
     
-    <package-name> - generated Wheel distribution file
+<package-name> - generated Wheel distribution file
 
 ## Run the app
 
