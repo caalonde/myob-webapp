@@ -2,6 +2,11 @@
 
 This is simple webapp using Python Flask module
 
+Dependencies:
+* flask
+* waitress
+* Pytest
+* setuptools
 
 ## Build
 
@@ -15,12 +20,12 @@ This is simple webapp using Python Flask module
 
 ## Run the app
 
-    To run from source code root directory
+    Development - To run from source code root directory
 
     export FLASK_APP=webapp:myapp
     flask run
 
-    To run using .whl distribution package via Waitress module
+    Production - To run using .whl distribution package via Waitress module
     
     waitress-server --call --port=500 "webapp:myapp"
 
