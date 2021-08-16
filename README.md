@@ -32,12 +32,12 @@ This is simple webapp using Python Flask module
 
 ## CI/CD Workflow
 
-Source Code Checkin to Github
-Github executes Github Actions
-    - checkout code
-    - run test using Pytest
-    - build Wheel distro package
-    - deploys file to the target server       
+* Source Code Checkin to Github
+* Github executes Github Actions
+  * checkout code
+  * run test using Pytest
+  * build Wheel distro package
+  * deploys file to the target server       
 
 # REST API
 
