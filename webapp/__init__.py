@@ -1,6 +1,7 @@
 import flask
 from flask import jsonify
 import subprocess
+import json
 
 def myapp():
     app = flask.Flask(__name__)
@@ -28,19 +29,25 @@ def myapp():
         version = "0000000000"
         description = "no description"
         for x in f:
-            if "version" in x:
-                version = x.strip()
+            if "name" in x:
+                name = x.split("=")
+                name = name[1].replace("'","").replace(",","")
+                print(name)
+            elif "version" in x:
+                version = x.split("=")
+                version = version[1].replace("'","").replace(",","")
                 print(version)
             elif "description" in x:
-                description = x.strip()
+                description = x.split("=")
+                description = description[1].replace("'","").replace(",","")
                 print(description)
 
-        myapplication = [{
-            "version": version[9:len(version)-2],
-            "description" : description[13:len(description)-2],
-            "lastcommitsha": str(githash,"utf-8")[0:7]
-        }]
+        data = {'description': description.strip(), \
+                'version': version.strip(), \
+                'lastcommitshaame': str(githash,"utf-8")[0:7] }
+        fdata = { name.strip() : [ data ]}
+        jdata = json.dumps(fdata)
 
-        return jsonify(myapplication)
+        return jdata
 
     return app
