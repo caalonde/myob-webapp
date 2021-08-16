@@ -15,13 +15,13 @@ Generates a Wheel distribution file <b>\<package-name\></b> by running
 
     python3 setup.py bdist_wheel
 
-    
+
 ## Install
 
 Installs the "webapp" package into the local or virtual environment
 
     python3 install <package-name>
-    
+
 
 ## Run the app
 
@@ -31,13 +31,13 @@ Installs the "webapp" package into the local or virtual environment
     flask run
 
    Production - Run using .whl distribution package via Waitress module
-    
+
     waitress-serve --call --port=5000 "webapp:myapp"
 
 ## Run the tests
 
    Run the command from source code root directory
-    
+
     pytest test_webapp.py
 
 ## CI/CD Workflow
@@ -65,11 +65,10 @@ The REST API to the webapp is described below.
 ### Response
 
     HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 200 OK
-    Connection: close
+    Content-Length: 95
     Content-Type: application/json
-    Content-Length: 2
+    Date: Mon, 16 Aug 2021 12:04:51 GMT
+    Server: waitress
 
     []
 
@@ -82,11 +81,10 @@ The REST API to the webapp is described below.
 ### Response
 
     HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 200 OK
-    Connection: close
+    Content-Length: 95
     Content-Type: application/json
-    Content-Length: 2
+    Date: Mon, 16 Aug 2021 12:04:51 GMT
+    Server: waitress
 
     []
 
@@ -99,10 +97,9 @@ The REST API to the webapp is described below.
 ### Response
 
     HTTP/1.1 200 OK
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 200 OK
-    Connection: close
+    Content-Length: 95
     Content-Type: application/json
-    Content-Length: 2
+    Date: Mon, 16 Aug 2021 12:04:51 GMT
+    Server: waitress
 
-    []
+    [{"description":"pre-interview technical test","lastcommitsha":"abc57858585","version":"0.1"}]
