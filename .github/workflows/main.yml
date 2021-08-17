@@ -26,8 +26,8 @@ jobs:
       - uses: actions/checkout@v2
 
       # Python lint
-      #- name: "Linting Python code"
-      #  run: pylint *.py
+      - name: "Linting Python code"
+        run: pylint webapp test_webapp.py
       
       # Run pytest
       - name: Run test suite
