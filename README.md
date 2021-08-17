@@ -50,9 +50,9 @@ Installs the "webapp" package into the local or virtual environment
   * build Wheel distro package
   * deploys file to the target server    
     
-Assumption:
-    Build server - local Mac machine via Gtihub action runner
-    Target server - local Mac machine
+* Assumption
+  * Build server - local Mac machine via Gtihub action runner
+  * Target server - local Mac machine
     
 # REST API
 
