@@ -6,7 +6,8 @@ This is simple webapp using Python Flask module
 Dependencies:
 * flask
 * waitress
-* Pytest
+* pytest
+* pylint
 * setuptools
 
 ## Build
@@ -54,7 +55,7 @@ Installs the "webapp" package into the local or virtual environment
   * Build server - local Mac machine via Gtihub action runner
   * Target server - local Mac machine
     
-# REST API
+# REST API Requirement
 
 The REST API to the webapp is described below.
 
@@ -74,7 +75,7 @@ The REST API to the webapp is described below.
     Date: Mon, 16 Aug 2021 12:04:51 GMT
     Server: waitress
 
-    []
+    Hello World!
 
 ## Get response from health check
 
