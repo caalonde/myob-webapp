@@ -41,14 +41,10 @@ def myapp():
         for line in lines:
             if "Name" in line:
                 name = line.split(":")[1]
-                #print(name)
             elif "Version" in line:
-                print(line)
                 version = line.split(":")[1]
-                #print(version)
             elif "Summary" in line:
                 description = line.split(":")[1]
-                #print(description)
 
         data = {'description': description.strip(), \
                 'version': version.strip(), \
