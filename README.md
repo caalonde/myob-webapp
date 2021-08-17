@@ -48,8 +48,12 @@ Installs the "webapp" package into the local or virtual environment
   * lint code using Pylint
   * run test using Pytest
   * build Wheel distro package
-  * deploys file to the target server       
-
+  * deploys file to the target server    
+    
+Assumption:
+    Build server - local Mac machine via Gtihub action runner
+    Target server - local Mac machine
+    
 # REST API
 
 The REST API to the webapp is described below.
