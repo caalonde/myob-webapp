@@ -32,15 +32,15 @@ def myapp():
             if "name" in x:
                 name = x.split("=")
                 name = name[1].replace("'","").replace(",","")
-                print(name)
+                #print(name)
             elif "version" in x:
                 version = x.split("=")
                 version = version[1].replace("'","").replace(",","")
-                print(version)
+                #print(version)
             elif "description" in x:
                 description = x.split("=")
                 description = description[1].replace("'","").replace(",","")
-                print(description)
+                #print(description)
 
         data = {'description': description.strip(), \
                 'version': version.strip(), \
