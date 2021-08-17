@@ -1,9 +1,11 @@
-import flask
-from flask import jsonify
+"""System module."""
 import subprocess
 import json
+import flask
+from flask import jsonify
 
 def myapp():
+    """A dummy docstring."""
     app = flask.Flask(__name__)
 
     @app.route("/")
@@ -11,7 +13,7 @@ def myapp():
         """A dummy docstring."""
         return "Hello World!"
 
-    @app.route("/health", methods=['GET'])
+    @app.route("/health")
     def healthcheck():
         """A dummy docstring."""
         return ""
@@ -21,30 +23,31 @@ def myapp():
         """A dummy docstring."""
 
         # Git hash info
-        bashCommand = "git rev-parse --short HEAD"
-        process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
-        githash, error = process.communicate()
+        gitcmd = "git rev-parse --short HEAD"
+        #process = subprocess.Popen(gitcmd.split(), stdout=subprocess.PIPE)
+        with subprocess.Popen(gitcmd.split(), stdout=subprocess.PIPE) as process:
+            githash, error = process.communicate()
+            print(error)
 
-        f = open("setup.py", "r")
+        name="none"
         version = "0000000000"
         description = "no description"
-        for x in f:
-            if "name" in x:
-                name = x.split("=")
+        with open("setup.py", "r") as line:
+            if "name" in line:
+                name = line.split("=")
                 name = name[1].replace("'","").replace(",","")
                 #print(name)
-            elif "version" in x:
-                version = x.split("=")
+            elif "version" in line:
+                version = line.split("=")
                 version = version[1].replace("'","").replace(",","")
                 #print(version)
-            elif "description" in x:
-                description = x.split("=")
+            elif "description" in line:
+                description = line.split("=")
                 description = description[1].replace("'","").replace(",","")
                 #print(description)
-
         data = {'description': description.strip(), \
                 'version': version.strip(), \
-                'lastcommitshaame': str(githash,"utf-8")[0:7] }
+                'lastcommitsha': str(githash,"utf-8")[0:7] }
         fdata = { name.strip() : [ data ]}
         jdata = json.dumps(fdata)
 

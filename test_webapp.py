@@ -5,6 +5,7 @@ app = myapp()
 client = app.test_client()
 
 def test_root():
+    """A dummy docstring."""
     url = "http://localhost:5000/"
     response = client.get(url)
     print(response.data)
