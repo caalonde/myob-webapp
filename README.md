@@ -107,4 +107,12 @@ The REST API to the webapp is described below.
     Date: Mon, 16 Aug 2021 12:04:51 GMT
     Server: waitress
 
-    [{"description":"pre-interview technical test","lastcommitsha":"abc57858585","version":"0.1"}]
+    {
+        "webapp": [
+            {
+                "description": "Flask web application",
+                "version": "1.0.0",
+                "lastcommitsha": "d181623"
+            }
+        ]
+    }
